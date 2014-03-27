@@ -6,20 +6,19 @@ import android.os.Bundle;
 import android.util.Config;
 import android.util.Log;
 
+
 public class InfantiumUnity extends UnityPlayerActivity
 {
-    private static final String TAG = "Inf-Unity-Plugin";
-    private static int number = 0;
- 
+    public static final String TAG = "Inf-Unity-Plugin";
+    
     @Override
     protected void onCreate(Bundle myBundle) {
+        Log.d(TAG, "onCreate");
         super.onCreate(myBundle);
- 
     }
     @Override
     protected void onResume() {
-        if (Config.DEBUG)
-            Log.d(TAG, "onResume");
+        Log.d(TAG, "onResume");
         super.onResume();
     }
     @Override
@@ -29,13 +28,13 @@ public class InfantiumUnity extends UnityPlayerActivity
     }
     @Override
     protected void onStop() {
-        if (Config.DEBUG)
-            Log.d(TAG, "onStop");
+        Log.d(TAG, "onStop");
         super.onStop();
     }
-    public static int getNumber()
-    {
-        number++;
-        return number;
+    
+    public void dummyTest(String logg){
+		Log.i(TAG, "DummyLog");
+		Log.i(TAG, logg);
     }
+    
 }

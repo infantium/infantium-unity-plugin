@@ -5,6 +5,10 @@
     <property name="sdk.dir" value="/Users/boyander/DEVELOPMENT/android-sdk-macosx"/>
     <property name="target" value="android-10"/>
     <property name="unity.androidplayer.jarfile" value="/Applications/Unity/Unity.app/Contents/PlaybackEngines/AndroidDevelopmentPlayer/bin/classes.jar"/>
+    <property name="infantium.jarfile" value="./libs/infantium_sdk.jar"/>
+    <property name="infantium.async" value="./libs/android-async-http-1.4.3.jar"/>
+    <property name="infantium.sqlite" value="./libs/sqlitejdbc-v056.jar"/>
+
     <!-- Source directory -->
     <property name="source.dir" value="./src" />
     <!-- Output directory for .class files-->
@@ -25,13 +29,17 @@
             <src path="${source.dir}" />
             <classpath>
                 <pathelement location="${sdk.dir}/platforms/${target}/android.jar"/>
-                <pathelement location="${unity.androidplayer.jarfile}"/>
+                <pathelement location="${infantium.jarfile}"/>	
+                <pathelement location="${infantium.async}"/>  
+                <pathelement location="${infantium.sqlite}"/>  
+				<pathelement location="${unity.androidplayer.jarfile}"/>
+
             </classpath>
         </javac>
     </target>
     <target name="build-jar" depends="compile">
-        <zip zipfile="${output.jarfile}"
-            basedir="${output.classes}" />
+        <jar destfile="${output.jarfile}" basedir="${output.classes}">
+        </jar>
     </target>
     <target name="clean-post-jar">
          <echo>Removing post-build-jar-clean</echo>
@@ -40,6 +48,8 @@
     <target name="clean" description="Removes output files created by other targets.">
         <delete dir="${output.dir}" verbose="${verbose}" />
     </target>
+    <target name="all" depends="clean, compile, build-jar">
+    </target>    
     <target name="message">
      <echo>Android Ant Build for Unity Android Plugin</echo>
         <echo>   message:      Displays this message.</echo>

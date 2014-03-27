@@ -2,18 +2,16 @@
 using System.Collections;
 
 public class InfantiumExample : MonoBehaviour {
-	public GUIText number_output_text;
-	AndroidJavaClass pluginActivityJavaClass;
-	
+	InfantiumBypass infantium;
 	void Start () 
 	{
-		AndroidJNI.AttachCurrentThread();
-		pluginActivityJavaClass = new AndroidJavaClass("com.infantium.unityplugin");
+		AndroidJNIHelper.debug = true; 
+		this.infantium = new InfantiumBypass("androidSDK","585f946642aac847403bf6743f918892eac695f6",100,100);
+		this.infantium.initInfantium();
 	}
 	
 	void Update()
 	{
-		int number = pluginActivityJavaClass.CallStatic<int>("getNumber");
-		number_output_text.text = "nr: " + number;
 	}
+
 }
