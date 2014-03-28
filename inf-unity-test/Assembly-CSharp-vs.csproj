@@ -49,7 +49,7 @@
      <Compile Include="Assets\InfantiumBypass.cs" />
      <Compile Include="Assets\InfantiumExample.cs" />
      <None Include="Assets\Plugins\Android\build.xml" />
-     <None Include="Assets\Plugins\Android\AndroidManifest_bbbb.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
