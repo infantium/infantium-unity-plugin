@@ -1,0 +1,8 @@
+====== Infantium Unity Plugin (IUP)  ======
+
+
+==== v1.0.0 alpha (2014-04-31) ====
+
+    * Implemented all goal types
+
+    * Added Example Script
