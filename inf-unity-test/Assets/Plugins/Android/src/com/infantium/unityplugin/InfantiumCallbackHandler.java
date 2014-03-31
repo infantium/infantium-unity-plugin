@@ -1,20 +1,12 @@
 package com.infantium.unityplugin;
 
-
-import java.util.HashMap;
-import java.util.Map;
-
 import android.util.Log;
-
 import com.infantium.android.sdk.InfantiumAsyncResponseHandler;
 import com.infantium.android.sdk.constants.Conf;
-
 import com.unity3d.player.UnityPlayer;
 
 public class InfantiumCallbackHandler{
-	private static final String LOG_TAG = "Infantium ANE Android";
 	private static final String UNITY_RECIVE_OBJECT= "Infantium ANE Android";
-
 	
 	private static final String INIT = "initFunction";
 	private static final String SET_CONTENTAPP_UUID = "setContentAppUUID";
@@ -43,49 +35,49 @@ public class InfantiumCallbackHandler{
 	public static final InfantiumAsyncResponseHandler handler = new InfantiumAsyncResponseHandler() {
 		@Override
 		public void onSuccessContentApp() {
-			if(Conf.D) Log.i(LOG_TAG, "Content App success callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "Content App success callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, SET_CONTENTAPP_UUID, "SUCCESS");
 		};
 		
 		@Override
 		public void onFailureContentApp(String description) {
-			if(Conf.D) Log.i(LOG_TAG, "Content App failure callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "Content App failure callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, SET_CONTENTAPP_UUID, "FAILURE");
 		};
 		
 		@Override
 		public void onSuccessCreateGameplay() {
-			if(Conf.D) Log.i(LOG_TAG, "CreateGameplay success callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "CreateGameplay success callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, CREATE_GAMEPLAY, "SUCCESS");
 		};
 		
 		@Override
 		public void onFailureCreateGameplay(String description) {
-			if(Conf.D) Log.i(LOG_TAG, "CreateGameplay failure callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "CreateGameplay failure callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, CREATE_GAMEPLAY, "FAILURE");
 		};
 
 		@Override
 		public void onSuccessCloseGameplay() {
-			if(Conf.D) Log.i(LOG_TAG, "CloseGameplay success callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "CloseGameplay success callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, CLOSE_GAMEPLAY, "SUCCESS");
 		};
 		
 		@Override
 		public void onFailureCloseGameplay(String description) {
-			if(Conf.D) Log.i(LOG_TAG, "CloseGameplay failure callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "CloseGameplay failure callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, CLOSE_GAMEPLAY, "FAILURE");
 		};
 
 		@Override
 		public void onSuccessGameRawData() {
-			if(Conf.D) Log.i(LOG_TAG, "SendGameRawdata success callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "SendGameRawdata success callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, SEND_GAME_RAWDATA, "SUCCESS");
 		};
 		
 		@Override
 		public void onFailureGameRawdata(String description) {
-			if(Conf.D) Log.i(LOG_TAG, "SendGameRawdata failure callback");
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "SendGameRawdata failure callback");
 			UnityPlayer.UnitySendMessage(UNITY_RECIVE_OBJECT, SEND_GAME_RAWDATA, "FAILURE");
 		};
 	};
