@@ -33,7 +33,6 @@
                 <pathelement location="${infantium.async}"/>  
                 <pathelement location="${infantium.sqlite}"/>  
 				<pathelement location="${unity.androidplayer.jarfile}"/>
-
             </classpath>
         </javac>
     </target>
