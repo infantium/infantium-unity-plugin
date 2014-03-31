@@ -1,5 +1,9 @@
 ## Infantium Unity Android Plugin
 
+Unity Plugin Release Version: v1.0.0
+Android SDK Version: v2.2.8
+Author: Marc Pomar Torres(marc@infantium.com)
+
 #### How to use it
 	// FILL WITH YOUR INFANTIUM CREDENTIALS
 	string api_user = "<your_api_user_here>";
@@ -39,6 +43,10 @@
 	
 	// Close Gameplay: Important!! Remember to close gameplay
 	this.infantium.closeGameplay();
+
+### How to compile android plugin
+Go to /Assets/Plugins/Android and run:
+	$ ant all
 
 **Some References:**
 http://docs.unity3d.com/Documentation/Manual/PluginsForAndroid.html
