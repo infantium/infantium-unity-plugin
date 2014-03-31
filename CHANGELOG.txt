@@ -2,6 +2,8 @@
 
 
 ==== v1.0.0 alpha (2014-04-31) ====
+	
+    * Select Production or Beta for rawdata
 
     * Implemented all goal types
 

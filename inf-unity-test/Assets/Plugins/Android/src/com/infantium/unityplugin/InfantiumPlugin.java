@@ -24,6 +24,12 @@ import com.unity3d.player.UnityPlayer;
 
 
 public class InfantiumPlugin {
+	
+    public final static boolean INFANTIUM_SDK_DEBUG = true;
+    
+    /* Change for PRODUCTION or BETA: "api" means production, "beta" means BETA ;-) */
+    public final static String INFANTIUM_SDK_SERVER = "beta";
+	
     InfantiumSDK infantium;
 	
     public InfantiumPlugin(){
@@ -32,7 +38,7 @@ public class InfantiumPlugin {
         final Context appContext = a.getApplicationContext();
       
         a.runOnUiThread(new Runnable() {public void run() {
-        	infantium = InfantiumSDK.getInfantiumSDK(appContext);
+        	infantium = InfantiumSDK.getInfantiumSDK(appContext, INFANTIUM_SDK_SERVER, INFANTIUM_SDK_DEBUG);     	
     		Log.i(InfantiumUnity.TAG, "Starting infantium sdk singleton");
         }});
     }
