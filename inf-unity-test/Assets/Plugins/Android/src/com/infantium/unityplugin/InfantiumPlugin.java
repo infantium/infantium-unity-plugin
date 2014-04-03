@@ -43,12 +43,18 @@ public class InfantiumPlugin {
         }});
     }
     
-    public InfantiumSDK initInfantium(String api_user, String api_key, int device_width, int device_height){
+    public InfantiumSDK initInfantium(String api_user, String api_key, int device_width, int device_height, String server, boolean debug){
 		Log.i(InfantiumUnity.TAG, "Call to InitInfantium");
     	try{
+            final Activity a = UnityPlayer.currentActivity;
+            final Context appContext = a.getApplicationContext();
+        	infantium = InfantiumSDK.getInfantiumSDK(appContext, server, debug);     	
     		infantium.setDeveloperCredentials(api_user, api_key);
 			infantium.setDeviceInfo(device_width, device_height);
 			infantium.setDeveloperHandler(InfantiumCallbackHandler.handler);
+			
+    		Log.i(InfantiumUnity.TAG, "Starting unity plugin with server: " + server);
+
 			return infantium;
     	
     	} catch (Exception e){
@@ -58,6 +64,7 @@ public class InfantiumPlugin {
     	return null;
     }
 
+   
 
     public InfantiumResponse addElement(String element_id, int width, int height, String movement){
     	Element ele = new Element(element_id);
