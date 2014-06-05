@@ -188,7 +188,7 @@ public class InfantiumPlugin {
     }
     
     
-    public InfantiumResponse addSelectionGoal(String goal_id, Long time_limit, boolean auto_eval, String instructions, 
+    public InfantiumResponse addSelectionGoal(String goal_id, long time_limit, boolean auto_eval, String instructions, 
     											int n_correct_choices, int n_incorrect_choices, boolean unique_solution, 
     											String needed_action){
     	SelectionGoal goal = new SelectionGoal(goal_id);
@@ -220,7 +220,7 @@ public class InfantiumPlugin {
 		return resp;
     }
     
-    public InfantiumResponse addMatchingGoal(String goal_id, Long time_limit, boolean auto_eval, 
+    public InfantiumResponse addMatchingGoal(String goal_id, long time_limit, boolean auto_eval, 
     		String instructions, String matching_element, String correspondence_type){
     	MatchingGoal goal = new MatchingGoal(goal_id, matching_element);
 		if(time_limit != -1L) {
@@ -244,7 +244,7 @@ public class InfantiumPlugin {
 		return resp;
 	}
     
-    public InfantiumResponse addTappingGoal(String goal_id, Long time_limit, boolean auto_eval, String instructions, String element_to_tap){
+    public InfantiumResponse addTappingGoal(String goal_id, long time_limit, boolean auto_eval, String instructions, String element_to_tap){
 		TappingGoal goal = new TappingGoal(goal_id, element_to_tap);
 		if(time_limit != -1L) {
 			goal.set_time_limit(time_limit);
