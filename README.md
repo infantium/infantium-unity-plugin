@@ -4,6 +4,10 @@ Unity Plugin Release Version: v1.0.0
 Android SDK Version: v2.2.8
 Author: Marc Pomar Torres(marc@infantium.com)
 
+When using with other Unity Plugins for Android requiring an AndroidManifest.xml, ensure the following permissions are set in the manifest:
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 #### How to use it
 	// FILL WITH YOUR INFANTIUM CREDENTIALS
 	string api_user = "<your_api_user_here>";
@@ -50,4 +54,3 @@ Go to /Assets/Plugins/Android and run:
 
 **Some References:**
 http://docs.unity3d.com/Documentation/Manual/PluginsForAndroid.html
-
