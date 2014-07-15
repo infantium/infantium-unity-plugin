@@ -139,11 +139,15 @@ public class InfantiumPlugin{
 	public InfantiumResponse addTappingGoal(string goal_id, long time_limit, Boolean auto_eval, string instructions, string element_to_tap){ 
 		return this.callPlugin("addTappingGoal", goal_id, time_limit, auto_eval, instructions, element_to_tap); 
 	}
+
+	public InfantiumResponse addNBackGoal(String goal_id, int nback, string[] elements, Boolean dual, Boolean requires_match, string[] properties){
+		return this.callPlugin ("addNBackGoal", goal_id, nback, AndroidJNIHelper.ConvertToJNIArray (elements), dual, requires_match, AndroidJNIHelper.ConvertToJNIArray (properties));
+	}
 	
 	public InfantiumResponse newBasicInteraction(string interaction_t, string object_type, string goal_type, int lifetime, int n_concurrent_oks, int n_concurrent_kos){ 
 		return this.callPlugin("newBasicInteraction", interaction_t, object_type, goal_type, lifetime, n_concurrent_oks, n_concurrent_kos); 
 	}
-	
+
 	/***********************
 	   INFANTIUM GAMEPLAY
 	 ***********************/

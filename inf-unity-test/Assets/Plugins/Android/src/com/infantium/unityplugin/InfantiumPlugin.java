@@ -13,11 +13,14 @@ import com.infantium.android.sdk.goals.Goal;
 import com.infantium.android.sdk.goals.MatchingGoal;
 import com.infantium.android.sdk.goals.SelectionGoal;
 import com.infantium.android.sdk.goals.TappingGoal;
+import com.infantium.android.sdk.goals.NBackGoal;
 import com.infantium.unityplugin.InfantiumCallbackHandler;
 import android.app.Activity;
 
 import android.content.Context;
 import android.util.Log;
+import java.util.List;
+import java.util.Arrays;
 
 import com.infantium.unityplugin.InfantiumUnity;
 import com.unity3d.player.UnityPlayer;
@@ -264,6 +267,25 @@ public class InfantiumPlugin {
 		return resp;
     }
     
+
+    public InfantiumResponse addNBackGoal(String goal_id, int nback, String[] elements, boolean dual, boolean requires_match, String[] properties){
+		NBackGoal goal = new NBackGoal(goal_id, nback, Arrays.asList(elements));
+
+		goal.set_dual(dual);
+		goal.set_requires_match(requires_match);
+		goal.set_properties(Arrays.asList(properties));
+		
+		InfantiumResponse resp = infantium.addGoal(goal);
+		
+		if(resp.equals(InfantiumResponse.Valid))
+			if(Conf.D) Log.i(InfantiumUnity.TAG, "- AddNbackGoal successful -");
+		else
+			Log.e(InfantiumUnity.TAG, "- AddNbackGoal failed: " + resp.toString() + " -");
+		
+		return resp;
+    }
+
+
     public InfantiumResponse newBasicInteraction(String interaction_t, String object_type, String goal_type, int lifetime, int n_concurrent_oks, int n_concurrent_kos){
 		
 		if (object_type.equals("")) {
