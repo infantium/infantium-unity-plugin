@@ -50,7 +50,9 @@ public class InfantiumExample : MonoBehaviour {
 
 		response = this.infantium.addSelectionGoal("goalId", -1, false, "", 1, 3, true, "");
 
-		response = this.infantium.addNBackGoal("nbackGoal3", 3, new string[]{"element1"}, true, true, new string[]{"color","shape"});
+		string[] elements = { "element1" };
+		string[] properties = { "color", "shape" };
+		response = this.infantium.addNBackGoal("nbackGoal3", 3, elements, true, true, properties);
 		
 		// Initialize timers, game has been started!
 		this.infantium.startPlaying();

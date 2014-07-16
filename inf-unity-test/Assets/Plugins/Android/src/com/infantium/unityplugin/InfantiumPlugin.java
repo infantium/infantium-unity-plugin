@@ -268,7 +268,7 @@ public class InfantiumPlugin {
     }
     
 
-    public InfantiumResponse addNBackGoal(String goal_id, int nback, String[] elements, boolean dual, boolean requires_match, String[] properties){
+    public InfantiumResponse addNBackGoal(String goal_id, String[] elements, int nback, boolean dual, boolean requires_match, String[] properties){ 
 		NBackGoal goal = new NBackGoal(goal_id, nback, Arrays.asList(elements));
 
 		goal.set_dual(dual);
