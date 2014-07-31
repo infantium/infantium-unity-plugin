@@ -1,13 +1,15 @@
 ## Infantium Unity Android Plugin
 
-Unity Plugin Release Version: v1.1.0
-Android SDK Version: v2.3.0
-Authors: 
-	Marc Pomar Torres(marc@infantium.com)
-	Jose Rodriguez (boriel@infantium.com)
-	Chesco Igual (chesco@infantium.com)
+* Unity Plugin Release Version: v1.1.0
+* Android SDK Version: v2.3.0
 
-When using with other Unity Plugins for Android requiring an AndroidManifest.xml, ensure the following permissions are set in the manifest:
+#### Authors: 
+* Marc Pomar Torres (marc@infantium.com)
+* Jose Rodriguez (boriel@infantium.com)
+* Chesco Igual (chesco@infantium.com)
+
+Note:
+**When using with other Unity Plugins for Android requiring an AndroidManifest.xml, ensure the following permissions are set in the manifest:**
 
 ```
 #!xml
