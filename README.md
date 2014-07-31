@@ -1,17 +1,22 @@
 ## Infantium Unity Android Plugin
 
-Unity Plugin Release Version: v1.0.0
-Android SDK Version: v2.2.8
-Author: Marc Pomar Torres(marc@infantium.com)
+Unity Plugin Release Version: v1.1.0
+Android SDK Version: v2.3.0
+Authors: 
+	Marc Pomar Torres(marc@infantium.com)
+	Jose Rodriguez (boriel@infantium.com)
+	Chesco Igual (chesco@infantium.com)
 
 When using with other Unity Plugins for Android requiring an AndroidManifest.xml, ensure the following permissions are set in the manifest:
-   
+
 ```
 #!xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
+### Import Plugin into unity
+	There is a .unitypackage file on this repo root. Double click and import all files. Nothing more is needed.
 
 #### How to use it
 	// FILL WITH YOUR INFANTIUM CREDENTIALS
