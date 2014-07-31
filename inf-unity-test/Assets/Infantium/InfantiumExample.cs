@@ -9,6 +9,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_ANDROID
+
 public class InfantiumExample : MonoBehaviour {
 	InfantiumPlugin infantium;
 	
@@ -75,3 +77,4 @@ public class InfantiumExample : MonoBehaviour {
 	}
 	
 }
+#endif
